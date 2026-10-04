@@ -1,0 +1,210 @@
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--text-primary);
+}
+
+/* Account info card */
+.accountInfo {
+  text-align: center;
+  padding: 40px 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.accountInfo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-gradient);
+}
+
+.avatarLarge {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: var(--accent-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 auto 16px;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.holderName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.accountNumber {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: monospace;
+  margin-bottom: 24px;
+}
+
+.balanceLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.balanceValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.createdAt {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
+
+/* Transaction forms */
+.transactionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.transactionCard {
+  position: relative;
+}
+
+.transactionCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.depositCard::before {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.withdrawCard::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.transactionTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.transactionIconDeposit {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--success-bg);
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transactionIconWithdraw {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--warning-bg);
+  color: var(--warning);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transactionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Danger zone */
+.dangerZone {
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.dangerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dangerTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--danger);
+  margin-bottom: 4px;
+}
+
+.dangerText {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Skeleton */
+.skeletonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px;
+  margin-bottom: 24px;
+}
+
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .transactionGrid,
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .balanceValue {
+    font-size: 1.7rem;
+  }
+
+  .dangerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
